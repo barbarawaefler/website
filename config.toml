@@ -1,3 +1,9 @@
+# The title of the website
+title = "Wäfler Website"
+
+# The language of the website
+default_language = "de"
+
 # The URL the site will be built for
 base_url = "https://craven.ch"
 
@@ -12,4 +18,3 @@ highlight_code = false
 build_search_index = false
 
 [extra]
-# Put all your custom variables here

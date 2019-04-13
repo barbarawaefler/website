@@ -1,11 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ section.title }}</title>
+        <title>{{ config.title }}</title>
+        <link rel="stylesheet" href="{{ get_url(path="style.css", trailing_slash=false) }}">
     </head>
     <body>
-        {{ section.content | safe }}
+        <ul>
+            <li {% if current_path == "/" %}class="active"{% endif %}>
+                <a href="/">Home</a>
+            </li>
+            <li {% if current_path == "angebot/" %}class="active"{% endif %}>
+                <a href="/angebot">Angebot</a>
+            </li>
+            <li {% if current_path == "ueber-uns/" %}class="active"{% endif %}>
+                <a href="/ueber-uns">Über uns</a>
+            </li>
+        </ul>
+        <main>
+            {% block main %}
+            {{ section.content | safe }}
+            {% endblock main %}
+        </main>
     </body>
 </html>
